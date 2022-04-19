@@ -1,0 +1,25 @@
+<div class="grid-jobs" #gridJobs>
+    <ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+    <div #child class="job" *ngFor="let job of jobs;let i = index;trackBy: trackById">
+        <div class="job__img">
+            <img [src]="job.company_logo" alt="">
+        </div>
+        <a [routerLink]="[ '/job',job.id]">
+            <div class="job__infos">
+                <div class="text-infos">
+                    <div class="text-infos__company-name">{{ job.company_name }}</div>
+                    <div class="text-infos__title">{{ job.title }}</div>
+                    <div class="text-infos__full-time">{{ job.job_type }}</div>
+                </div>
+                <div class="location-infos">
+                    <div class="location-infos__position">
+                        <span class="location-infos__icon"><i class="ri-earth-line"></i></span><span class="city">{{ job.candidate_required_location }}</span>
+                    </div>
+                    <div class="location-infos__time">
+                        <span class="location-infos__icon"><i class="ri-time-line"></i></span><span class="date">{{ job.publication_date | date:'MMMM d, y'}}</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+@import 'src/assets/scss/utils/mixins';
+$base-margin: 1rem;
+%flex-row {
+    display: flex;
+    flex-direction: row;
+    &-x,
+    &-y,
+    &-center {
+        display: flex;
+    }
+    &-x {
+        justify-content: center;
+    }
+    &-y {
+        align-items: center;
+        align-content: center;
+    }
+    &-center {
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+}
+
+%flex-column {
+    display: flex;
+    flex-direction: column;
+    &-x,
+    &-y,
+    &-center {
+        display: flex;
+    }
+    &-x {
+        align-items: center;
+        align-content: center;
+    }
+    &-y {
+        justify-content: center;
+    }
+    &-center {
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+}
+
+%wrapper-margin {
+    margin: 0 max(calc($base-margin / 2), 4%);
+    @include tablet {
+        margin: 0 max(calc($base-margin / 2), 10%);
+    }
+}
+
+%absolute {
+    position: absolute;
+    &-x {
+        top: 50%;
+        transform: translateX(-50%);
+    }
+}

@@ -1,0 +1,21 @@
+@import 'src/assets/scss/utils/vars';
+@import 'src/assets/scss/utils/placeholders';
+@import 'src/assets/scss/utils/mixins';
+.header-main {
+    background-color: lighten($color: $secondary-color, $amount: 26%);
+    padding-bottom: calc( 1.3rem + 4vmin);
+    &__h1 {
+        padding: calc( 4rem - 2vmin) 0;
+        text-align: center;
+        font-size: clamp(24px, 30vw, 54px);
+    }
+    &__nav {
+        padding: 3rem 0rem;
+        background-image: url('/assets/images/backgroundImg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+        @extend %wrapper-margin;
+    }
+}

@@ -1,0 +1,41 @@
+@import 'src/assets/scss/utils/vars';
+@import 'src/assets/scss/utils/placeholders';
+@import 'src/assets/scss/utils/mixins';
+body {
+    background-color: $primary-color;
+}
+
+a {
+    text-decoration: none;
+}
+
+label {
+    display: inline-block;
+}
+
+main.main {
+    padding-top: 1rem;
+    @extend %wrapper-margin;
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.main__aside {
+    padding: 1rem .7rem;
+    background-color: $primary-color;
+    box-shadow: -8px 10px 15px lighten($color: $primary-color, $amount: 70%), 8px 10px 20px darken($color: $primary-color, $amount: 20%);
+    border-radius: 15px;
+    max-height: 400px;
+    @include tablet {
+        width: 30%;
+    }
+}
+
+.main__section {
+    @include tablet {
+        width: 70%;
+        margin-left: max(1.5rem, min(2rem, calc(1rem + 5vmin)));
+    }
+}

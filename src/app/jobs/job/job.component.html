@@ -1,0 +1,40 @@
+<main class="main" *ngIf="job">
+    <aside class="main__aside">
+        <div class="back"><span class="back__icon"><a routerLink="/home"><i class="ri-arrow-left-line"></i></a></span><span class="back__text">Back to search</span></div>
+        <div class="how-apply">How to Apply</div>
+        <address>
+            <span>Please email a copy of your resume and online portfolio to </span>
+            <a href="{{ job.url }}">Ici</a>
+        </address>
+    </aside>
+    <section class="main__section">
+        <div class="job-view">
+            <header class="job-view__heading">
+                <div class="container-title-time">
+                    <h2>{{ job.title }}</h2>
+                    <div>{{ job.job_type }}</div>
+                    <div class="location-infos__time">
+                        <span class="location-infos__icon"><i class="ri-time-line"></i></span><span class="date">{{ job.publication_date | date:'MMMM d, y'}}</span>
+                    </div>
+                </div>
+
+                <div class="container-brand">
+                    <div class="container-brand__img">
+                        <img src="{{ job.company_logo }}" alt="">
+                    </div>
+                    <a href="{{ job.url }}">
+                        <div class="container-brand__location">
+                            <h3>{{ job.company_name }}</h3>
+                            <div class="location-infos__position">
+                                <span class="location-infos__icon"><i class="ri-earth-line"></i></span><span class="city">{{ job.candidate_required_location }}</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </header>
+            <section class="job-view__description">
+                <div [innerHTML]="job.description"></div>
+            </section>
+        </div>
+    </section>
+</main>

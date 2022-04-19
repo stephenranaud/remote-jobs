@@ -1,0 +1,33 @@
+@import 'src/assets/scss/utils/vars';
+$radius: 4px;
+.wrapper-form-search {
+    position: relative;
+    text-align: center;
+    input {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: .7rem;
+        width: 90%;
+        max-width: 600px;
+        border: none;
+        border-radius: $radius;
+        padding-left: 2rem;
+    }
+    label {
+        position: absolute;
+        top: 50%;
+        transform: translate(70%, -33%);
+        color: lighten($color: $txt-color, $amount: 50%);
+    }
+    button {
+        position: absolute;
+        top: 3px;
+        bottom: 3px;
+        width: 73px;
+        transform: translateX(-107%);
+        background-color: $secondary-color;
+        border: none;
+        border-radius: $radius;
+        color: $primary-color;
+    }
+}

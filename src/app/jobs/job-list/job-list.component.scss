@@ -1,0 +1,67 @@
+@import '/src/assets/scss/utils/vars';
+@import '/src/assets/scss/utils/mixins';
+@import '/src/assets/scss/utils/placeholders';
+.grid-jobs {
+    margin-top: 1.2rem;
+    display: grid;
+    max-width: map-get($map: $break-points, $key: latop-medium);
+    gap: 1rem;
+    grid-template-columns: repeat( auto-fit, minmax(240px, 1fr));
+    @include tablet {
+        margin-top: 4rem;
+    }
+    a {
+        color: $txt-color;
+    }
+}
+
+.job {
+    background-color: lighten($color: $third-color, $amount: 15%);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    @extend %flex-row;
+    &__img {
+        flex-shrink: 0.5;
+        img {
+            width: 100%;
+        }
+    }
+    &__infos {
+        padding: .8rem;
+        width: 100%;
+    }
+    .text-infos {
+        &__company-name {
+            font-size: 1rem;
+            font-weight: 900;
+        }
+        &__title {
+            font-size: clamp(1rem, 5vw, 1.2rem);
+            margin: .4rem 0;
+        }
+        &__full-time {
+            border: 1px solid $txt-color;
+            padding: .4rem .7rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+    }
+    .location-infos {
+        @extend %flex-row;
+        justify-content: flex-end;
+        justify-content: flex-start;
+        &__position {
+            @extend %flex-row;
+        }
+        &__time {
+            @extend %flex-row;
+            flex-grow: 4;
+            justify-content: flex-start;
+        }
+        &__icon {
+            color: lighten($color: $txt-color, $amount: 50%);
+            margin: auto;
+        }
+    }
+}

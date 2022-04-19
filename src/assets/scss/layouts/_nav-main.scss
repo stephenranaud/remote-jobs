@@ -1,0 +1,28 @@
+@import 'src/assets/scss/utils/mixins';
+@import 'src/assets/scss/utils/placeholders';
+@import 'src/assets/scss/utils/mixins';
+.nav-main {
+    @extend %flex-row-center;
+    padding: calc( 1.2rem + .3vmin);
+    flex-direction: row;
+    background-color: $primary-color;
+    height: 87px;
+    border-bottom: 2px dotted black;
+    &__logo {
+        a {
+            text-transform: uppercase;
+            color: $accent-color;
+            font-weight: 900;
+        }
+        flex-grow: 2;
+    }
+    &__info {
+        flex-grow: 1;
+        text-align: end;
+        a {
+            margin-left: 1rem;
+            color: $accent-color;
+            font-weight: 700;
+        }
+    }
+}
